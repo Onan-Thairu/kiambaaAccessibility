@@ -345,6 +345,7 @@ var baseMaps = {};
 // Adding legend images to the layer switcher
 L.control.layers(baseMaps,{'<img src="legend/Kiambaa_marketcenters_4.png" /> Kiambaa_marketcenters': layer_Kiambaa_marketcenters_4,'<img src="legend/Kiambaa_primaryschools_3.png" /> Kiambaa_primaryschools': layer_Kiambaa_primaryschools_3,'<img src="legend/Kiambaa_secondaryschools_2.png" /> Kiambaa_secondaryschools': layer_Kiambaa_secondaryschools_2,'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
 setBounds();
+
 // Initialize the Reachability plugin
 var reachabilityControl = L.control.reachability({
     // Add settings/options here
@@ -353,7 +354,10 @@ var reachabilityControl = L.control.reachability({
     styleFn: styleIsolines,
     mouseOverFn: highlightIsolines,
     mouseOutFn: resetIsolines,
+    clickFn: clickIsolines,
+
 }).addTo(map);
+
 // Error handlers in case there is a problem when calling the API
 map.on('reachability:error', function () {
     alert('Unfortunately there has been an error calling the API.\nMore details are available in the console.');
