@@ -357,7 +357,24 @@ var reachabilityControl = L.control.reachability({
     mouseOutFn: resetIsolines,
     clickFn: clickIsolines,
     expandButtonContent: "",
-    expandButtonStyleClass: "reachbility-control-expand-button far fa-dot-circle fa-2x"
+    expandButtonStyleClass: "reachbility-control-expand-button far fa-dot-circle fa-2x",
+    drawButtonContent: "",
+    drawButtonStyleClass: "fas fa-pencil-alt fa-2x",
+    deleteButtonContent: "",
+    deleteButtonStyleClass: "fas fa-trash fa-2x",
+    distanceButtonContent: "",
+    distanceButtonStyleClass: "fas fa-road fa-2x",
+    timeButtonContent: "",
+    timeButtonStyleClass: "far fa-clock fa-2x",
+    travelModeButton1Content: "",
+    travelModeButton1StyleClass: "fas fa-car-alt fa-2x",
+    travelModeButton2Content: "",
+    travelModeButton2StyleClass: "fas fa-biking fa-2x",
+    travelModeButton3Content: "",
+    travelModeButton3StyleClass: "fas fa-walking fa-2x",
+    travelModeButton4Content: "",
+    travelModeButton4StyleClass: "fas fa-wheelchair fa-2x",
+    collapseButtonContent: "X",
 
 }).addTo(map);
 
