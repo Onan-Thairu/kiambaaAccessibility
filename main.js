@@ -1,3 +1,4 @@
+
 var highlightLayer;
     function highlightFeature(e) {
         highlightLayer = e.target;
@@ -355,6 +356,8 @@ var reachabilityControl = L.control.reachability({
     mouseOverFn: highlightIsolines,
     mouseOutFn: resetIsolines,
     clickFn: clickIsolines,
+    expandButtonContent: "",
+    expandButtonStyleClass: "reachbility-control-expand-button far fa-dot-circle fa-2x"
 
 }).addTo(map);
 
