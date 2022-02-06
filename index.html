@@ -1,52 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <!--<link rel="stylesheet" href="css/leaflet.css">-->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <!--Font Awesome-->
-        <script src="https://kit.fontawesome.com/16c6d96ecb.js" crossorigin="anonymous"></script>
-
-        <!-- Leaflet Reachability -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.css"/>
-        <script src="https://cdn.jsdelivr.net/gh/trafforddatalab/leaflet.reachability@v2.0.1/leaflet.reachability.js"></script>
-
-        <title>Kiambaa Accessibility Map</title>
-    </head>
-    <body>
-        <div id="map"></div>
-        <script src="js/qgis2web_expressions.js"></script>
-        <!--<script src="js/leaflet.js"></script>-->
-        <script src="js/leaflet.rotatedMarker.js"></script>
-        <script src="js/leaflet.pattern.js"></script>
-        <script src="js/leaflet-hash.js"></script>
-        <script src="js/Autolinker.min.js"></script>
-        <script src="js/rbush.min.js"></script>
-        <script src="js/labelgun.min.js"></script>
-        <script src="js/labels.js"></script>
-        <script src="data/Kiambaa_subcounty_0.js"></script>
-        <script src="data/Kiambaa_healthfacilities_1.js"></script>
-        <script src="data/Kiambaa_secondaryschools_2.js"></script>
-        <script src="data/Kiambaa_primaryschools_3.js"></script>
-        <script src="data/Kiambaa_marketcenters_4.js"></script>
-        <script src="style.js"></script>
-        <script src="main.js"></script>
-        <i class="far fa-dot-circle"></i>
-        <i class="fas fa-pencil-alt"></i>
-        <i class="fas fa-trash"></i>
-        <i class="fas fa-road"></i>
-        <!--<i class="fas fa-clock"></i>-->
-        <i class="far fa-clock"></i>
-        <i class="fas fa-car-alt"></i>
-        <i class="fas fa-biking"></i>
-        <i class="fas fa-walking"></i>
-        <i class="fas fa-wheelchair"></i>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landingPage.css">
+    <title>Kiambaa Accessibility Map</title>
+</head>
+<body>
+        <header>
+            <h1 id="logo">Kiambaa Reachability</h1>
+            <main>
+                <div>
+                    <h3>Welcome</h3>
+                    <p>We help you create and draw time and distance buffers around areas of accessibility for different 
+                        modes of transport in Kiambaa Sub-County.
+                    </p>
+                    <div>
+                        <ul>
+                            <li>Secondary Schools</li>
+                            <li>Primary Schools</li>
+                            <li>Market Centers</li>
+                            <li>Health facilities</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button><a href="map.html">Get Started</a></button>
+                    </div>
+                </div>
+            </main>
+        </header>
+</body>
 </html>

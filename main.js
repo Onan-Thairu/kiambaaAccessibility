@@ -1,20 +1,4 @@
 
-var highlightLayer;
-    function highlightFeature(e) {
-        highlightLayer = e.target;
-        if (e.target.feature.geometry.type === 'LineString') {
-          highlightLayer.setStyle({
-            color: '#ffff00',
-          });
-        } else {
-          highlightLayer.setStyle({
-            fillColor: '#ffff00',
-            fillOpacity: 1
-          });
-        }
-        highlightLayer.openPopup();
-    }
-
 // Create map object
 var map = L.map('map', {
     zoomControl:true, maxZoom:28, minZoom:1
@@ -343,7 +327,7 @@ bounds_group.addLayer(layer_Kiambaa_marketcenters_4);
 map.addLayer(layer_Kiambaa_marketcenters_4);
 var baseMaps = {};
 
-// Adding legend images to the layer switcher
+// Adding legend marker images to the layer switcher
 L.control.layers(baseMaps,{'<img src="legend/Kiambaa_marketcenters_4.png" /> Kiambaa_marketcenters': layer_Kiambaa_marketcenters_4,'<img src="legend/Kiambaa_primaryschools_3.png" /> Kiambaa_primaryschools': layer_Kiambaa_primaryschools_3,'<img src="legend/Kiambaa_secondaryschools_2.png" /> Kiambaa_secondaryschools': layer_Kiambaa_secondaryschools_2,'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
 setBounds();
 
@@ -357,7 +341,7 @@ var reachabilityControl = L.control.reachability({
     mouseOutFn: resetIsolines,
     clickFn: clickIsolines,
     expandButtonContent: "",
-    expandButtonStyleClass: "reachbility-control-expand-button far fa-dot-circle fa-2x",
+    expandButtonStyleClass: "reachbility-control-expand-button fas fa-bullseye fa-2x",
     drawButtonContent: "",
     drawButtonStyleClass: "fas fa-pencil-alt fa-2x",
     deleteButtonContent: "",
