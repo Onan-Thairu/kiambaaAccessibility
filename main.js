@@ -112,22 +112,27 @@ function pop_Kiambaa_healthfacilities_1(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-function style_Kiambaa_healthfacilities_1_0() {
-    return {
-        pane: 'pane_Kiambaa_healthfacilities_1',
-        radius: 4.0,
-        opacity: 1,
-        color: 'rgba(35,35,35,1.0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
-        weight: 1,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(22,255,236,1.0)',
-        interactive: true,
-    }
-}
+// function style_Kiambaa_healthfacilities_1_0() {
+//     return {
+//         pane: 'pane_Kiambaa_healthfacilities_1',
+//         radius: 4.0,
+//         opacity: 1,
+//         color: 'rgba(35,35,35,1.0)',
+//         dashArray: '',
+//         lineCap: 'butt',
+//         lineJoin: 'miter',
+//         weight: 1,
+//         fill: true,
+//         fillOpacity: 1,
+//         fillColor: 'rgba(22,255,236,1.0)',
+//         interactive: true,
+//     }
+// }
+
+const fontAwesomeHealthIcon = L.divIcon({
+    html: '<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span>',
+    className:'healthIcon',
+})
 map.createPane('pane_Kiambaa_healthfacilities_1');
 map.getPane('pane_Kiambaa_healthfacilities_1').style.zIndex = 401;
 map.getPane('pane_Kiambaa_healthfacilities_1').style['mix-blend-mode'] = 'normal';
@@ -143,7 +148,8 @@ var layer_Kiambaa_healthfacilities_1 = new L.geoJson(json_Kiambaa_healthfaciliti
             feature: feature,
             variables: {}
         };
-        return L.circleMarker(latlng, style_Kiambaa_healthfacilities_1_0(feature));
+        //return L.circleMarker(latlng, style_Kiambaa_healthfacilities_1_0(feature));
+        return L.marker(latlng, {icon: fontAwesomeHealthIcon})
     },
 });
 bounds_group.addLayer(layer_Kiambaa_healthfacilities_1);
@@ -171,22 +177,26 @@ function pop_Kiambaa_secondaryschools_2(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-function style_Kiambaa_secondaryschools_2_0() {
-    return {
-        pane: 'pane_Kiambaa_secondaryschools_2',
-        radius: 4.0,
-        opacity: 1,
-        color: 'rgba(35,35,35,1.0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
-        weight: 1,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(255,255,0,1.0)',
-        interactive: true,
-    }
-}
+// function style_Kiambaa_secondaryschools_2_0() {
+//     return {
+//         pane: 'pane_Kiambaa_secondaryschools_2',
+//         radius: 4.0,
+//         opacity: 1,
+//         color: 'rgba(35,35,35,1.0)',
+//         dashArray: '',
+//         lineCap: 'butt',
+//         lineJoin: 'miter',
+//         weight: 1,
+//         fill: true,
+//         fillOpacity: 1,
+//         fillColor: 'rgba(255,255,0,1.0)',
+//         interactive: true,
+//     }
+// }
+const fontAwesomeSecSchIcon = L.divIcon({
+    html: '<span style="font-size: 1.5em; color: DarkRed;"><i class="fa-solid fa-school-flag"></i></span>',
+    className:'healthIcon',
+})
 map.createPane('pane_Kiambaa_secondaryschools_2');
 map.getPane('pane_Kiambaa_secondaryschools_2').style.zIndex = 402;
 map.getPane('pane_Kiambaa_secondaryschools_2').style['mix-blend-mode'] = 'normal';
@@ -202,7 +212,8 @@ var layer_Kiambaa_secondaryschools_2 = new L.geoJson(json_Kiambaa_secondaryschoo
             feature: feature,
             variables: {}
         };
-        return L.circleMarker(latlng, style_Kiambaa_secondaryschools_2_0(feature));
+        //return L.circleMarker(latlng, style_Kiambaa_secondaryschools_2_0(feature));
+        return L.marker(latlng, {icon:fontAwesomeSecSchIcon})
     },
 });
 bounds_group.addLayer(layer_Kiambaa_secondaryschools_2);
@@ -230,22 +241,26 @@ function pop_Kiambaa_primaryschools_3(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-function style_Kiambaa_primaryschools_3_0() {
-    return {
-        pane: 'pane_Kiambaa_primaryschools_3',
-        radius: 4.0,
-        opacity: 1,
-        color: 'rgba(35,35,35,1.0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
-        weight: 1,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(129,15,19,1.0)',
-        interactive: true,
-    }
-}
+// function style_Kiambaa_primaryschools_3_0() {
+//     return {
+//         pane: 'pane_Kiambaa_primaryschools_3',
+//         radius: 4.0,
+//         opacity: 1,
+//         color: 'rgba(35,35,35,1.0)',
+//         dashArray: '',
+//         lineCap: 'butt',
+//         lineJoin: 'miter',
+//         weight: 1,
+//         fill: true,
+//         fillOpacity: 1,
+//         fillColor: 'rgba(129,15,19,1.0)',
+//         interactive: true,
+//     }
+// }
+const fontAwesomePriSchIcon = L.divIcon({
+    html: '<span style="font-size: 1.5em; color: MediumPurple;"><i class="fa-solid fa-school-flag"></i></span>',
+    className:'healthIcon',
+})
 map.createPane('pane_Kiambaa_primaryschools_3');
 map.getPane('pane_Kiambaa_primaryschools_3').style.zIndex = 403;
 map.getPane('pane_Kiambaa_primaryschools_3').style['mix-blend-mode'] = 'normal';
@@ -261,7 +276,8 @@ var layer_Kiambaa_primaryschools_3 = new L.geoJson(json_Kiambaa_primaryschools_3
             feature: feature,
             variables: {}
         };
-        return L.circleMarker(latlng, style_Kiambaa_primaryschools_3_0(feature));
+        //return L.circleMarker(latlng, style_Kiambaa_primaryschools_3_0(feature));
+        return L.marker(latlng, {icon: fontAwesomePriSchIcon})
     },
 });
 bounds_group.addLayer(layer_Kiambaa_primaryschools_3);
@@ -289,22 +305,26 @@ function pop_Kiambaa_marketcenters_4(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-function style_Kiambaa_marketcenters_4_0() {
-    return {
-        pane: 'pane_Kiambaa_marketcenters_4',
-        radius: 4.0,
-        opacity: 1,
-        color: 'rgba(35,35,35,1.0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
-        weight: 1,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: 'rgba(21,108,252,1.0)',
-        interactive: true,
-    }
-}
+// function style_Kiambaa_marketcenters_4_0() {
+//     return {
+//         pane: 'pane_Kiambaa_marketcenters_4',
+//         radius: 4.0,
+//         opacity: 1,
+//         color: 'rgba(35,35,35,1.0)',
+//         dashArray: '',
+//         lineCap: 'butt',
+//         lineJoin: 'miter',
+//         weight: 1,
+//         fill: true,
+//         fillOpacity: 1,
+//         fillColor: 'rgba(21,108,252,1.0)',
+//         interactive: true,
+//     }
+// }
+const fontAwesomeMartetIcon = L.divIcon({
+    html: '<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span>',
+    className:'healthIcon',
+})
 map.createPane('pane_Kiambaa_marketcenters_4');
 map.getPane('pane_Kiambaa_marketcenters_4').style.zIndex = 404;
 map.getPane('pane_Kiambaa_marketcenters_4').style['mix-blend-mode'] = 'normal';
@@ -320,7 +340,8 @@ var layer_Kiambaa_marketcenters_4 = new L.geoJson(json_Kiambaa_marketcenters_4, 
             feature: feature,
             variables: {}
         };
-        return L.circleMarker(latlng, style_Kiambaa_marketcenters_4_0(feature));
+        //return L.circleMarker(latlng, style_Kiambaa_marketcenters_4_0(feature));
+        return L.marker(latlng, {icon: fontAwesomeMartetIcon})
     },
 });
 bounds_group.addLayer(layer_Kiambaa_marketcenters_4);
@@ -328,7 +349,8 @@ map.addLayer(layer_Kiambaa_marketcenters_4);
 var baseMaps = {};
 
 // Adding legend marker images to the layer switcher
-L.control.layers(baseMaps,{'<img src="legend/Kiambaa_marketcenters_4.png" /> Kiambaa_marketcenters': layer_Kiambaa_marketcenters_4,'<img src="legend/Kiambaa_primaryschools_3.png" /> Kiambaa_primaryschools': layer_Kiambaa_primaryschools_3,'<img src="legend/Kiambaa_secondaryschools_2.png" /> Kiambaa_secondaryschools': layer_Kiambaa_secondaryschools_2,'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
+//'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,}
+L.control.layers(baseMaps,{'<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span> Market Centers': layer_Kiambaa_marketcenters_4,'<span style="font-size: 1.5em; color: MediumPurple;"><i class="fa-solid fa-school-flag"></i></span> Primary Schools': layer_Kiambaa_primaryschools_3,'<span style="font-size: 1.5em; color: DarkRed;"><i class="fa-solid fa-school-flag"></i></span> Secondary Schools': layer_Kiambaa_secondaryschools_2,'<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span> Health Facilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
 setBounds();
 
 // Initialize the Reachability plugin
@@ -341,7 +363,7 @@ var reachabilityControl = L.control.reachability({
     mouseOutFn: resetIsolines,
     clickFn: clickIsolines,
     expandButtonContent: "",
-    expandButtonStyleClass: "reachbility-control-expand-button fas fa-bullseye fa-2x",
+    expandButtonStyleClass: "reachbility-control-expand-button fa-solid fa-bullseye fa-2x",
     drawButtonContent: "",
     drawButtonStyleClass: "fas fa-pencil-alt fa-2x",
     deleteButtonContent: "",
@@ -369,3 +391,4 @@ map.on('reachability:error', function () {
 map.on('reachability:no_data', function () {
     alert('Unfortunately no data was received from the API.\n');
 });
+

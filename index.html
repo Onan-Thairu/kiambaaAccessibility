@@ -4,32 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="landingPage.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/16c6d96ecb.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="landingPage.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Kiambaa Accessibility Map</title>
 </head>
 <body>
-        <header>
-            <h1 id="logo">Kiambaa Reachability</h1>
-            <main>
-                <div>
-                    <h3>Welcome</h3>
-                    <p>We help you create and draw time and distance buffers around areas of accessibility for different 
-                        modes of transport in Kiambaa Sub-County.
-                    </p>
-                    <div class="container">
-                        <ul>
-                            <li>Secondary Schools</li>
-                            <li>Primary Schools</li>
-                            <li>Market Centers</li>
-                            <li>Health facilities</li>
-                        </ul>
-                    </div>
-                    <div class="btn">
-                        <button><a href="map.html">Get Started</a></button>
-                    </div>
-                    
-                </div>
-            </main>
-        </header>
+    <style>
+        body {
+            background-image: url('bg8.png');
+            background-position: center center; /* Background image is centered vertically and horizontally */
+            background-repeat: no-repeat;       /* Background image doesn't tile */
+            background-attachment: fixed;       /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height*/
+            background-size: cover;             /* This is what makes the background image rescale based on the container's size */
+            background-color: #464646;        /* Set a background color that will be displayed while the background image is loading.*/
+            
+        }
+    </style>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Kiambaa Accessibility</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">We help you visualize areas accessible to you by drawing travel time and distance buffers</p>
+          </div>
+          <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <span style="font-size: 1.5em; color: DarkRed;" class="mr-4"><i class="fa-solid fa-school-flag"></i></span>
+                <span class="title-font font-medium">Secondary School</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <span style="font-size: 1.3em; " class="mr-4"><i class="fa-solid fa-cart-shopping"></i></span>
+                <span class="title-font font-medium">Market Centers</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <span style="font-size: 1.5em; color: MediumPurple;" class="mr-4"><i class="fa-solid fa-school-flag"></i></span>
+                <span class="title-font font-medium">Primary Schools</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <span style="font-size: 1.3em; color: Red;" class="mr-4"><i class="fa-solid fa-square-h"></i></span>
+                <span class="title-font font-medium">Health Facilities</span>
+              </div>
+            </div>
+          </div>
+          <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="map.html">Get Started</a></button>
+        </div>
+      </section>
 </body>
 </html>
