@@ -2,7 +2,7 @@
 // Create map object
 var map = L.map('map', {
     zoomControl:true, maxZoom:28, minZoom:1
-}).fitBounds([[-1.2423299249870705,36.65276221601912],[-1.0997245013662968,36.91580119527722]]);
+}).fitBounds([[-1.2423299249870705,36.68276221601912],[-1.0997245013662968,36.80580119527722]]);
 
 // Add the tilelayer
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
@@ -10,6 +10,8 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
     subdomains: "abcd",
 }).addTo(map);
 
+// Leaflet-hash lets you add dynamic URL hashes to web pages with Leaflet maps. You can easily link users to specific
+// map view. https://github.com/mlevans/leaflet-hash
 var hash = new L.Hash(map);
 map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
 var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -36,28 +38,7 @@ function pop_Kiambaa_subcounty_0(feature, layer) {
     
     var popupContent = '<table>\
             <tr>\
-                <td colspan="2">' + (feature.properties['country'] !== null ? autolinker.link(feature.properties['country'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['provpcode'] !== null ? autolinker.link(feature.properties['provpcode'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['province'] !== null ? autolinker.link(feature.properties['province'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['ctypcode'] !== null ? autolinker.link(feature.properties['ctypcode'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
                 <td colspan="2">' + (feature.properties['county'] !== null ? autolinker.link(feature.properties['county'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['scpcode'] !== null ? autolinker.link(feature.properties['scpcode'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['subcounty'] !== null ? autolinker.link(feature.properties['subcounty'].toLocaleString()) : '') + '</td>\
-            </tr>\
-            <tr>\
-                <td colspan="2">' + (feature.properties['dhis2_id'] !== null ? autolinker.link(feature.properties['dhis2_id'].toLocaleString()) : '') + '</td>\
             </tr>\
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
@@ -89,6 +70,8 @@ var layer_Kiambaa_subcounty_0 = new L.geoJson(json_Kiambaa_subcounty_0, {
 });
 bounds_group.addLayer(layer_Kiambaa_subcounty_0);
 map.addLayer(layer_Kiambaa_subcounty_0);
+
+
 function pop_Kiambaa_healthfacilities_1(feature, layer) {
     layer.on({
         mouseout: function(e) {
@@ -112,22 +95,7 @@ function pop_Kiambaa_healthfacilities_1(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-// function style_Kiambaa_healthfacilities_1_0() {
-//     return {
-//         pane: 'pane_Kiambaa_healthfacilities_1',
-//         radius: 4.0,
-//         opacity: 1,
-//         color: 'rgba(35,35,35,1.0)',
-//         dashArray: '',
-//         lineCap: 'butt',
-//         lineJoin: 'miter',
-//         weight: 1,
-//         fill: true,
-//         fillOpacity: 1,
-//         fillColor: 'rgba(22,255,236,1.0)',
-//         interactive: true,
-//     }
-// }
+
 
 const fontAwesomeHealthIcon = L.divIcon({
     html: '<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span>',
@@ -177,24 +145,10 @@ function pop_Kiambaa_secondaryschools_2(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-// function style_Kiambaa_secondaryschools_2_0() {
-//     return {
-//         pane: 'pane_Kiambaa_secondaryschools_2',
-//         radius: 4.0,
-//         opacity: 1,
-//         color: 'rgba(35,35,35,1.0)',
-//         dashArray: '',
-//         lineCap: 'butt',
-//         lineJoin: 'miter',
-//         weight: 1,
-//         fill: true,
-//         fillOpacity: 1,
-//         fillColor: 'rgba(255,255,0,1.0)',
-//         interactive: true,
-//     }
-// }
+
+
 const fontAwesomeSecSchIcon = L.divIcon({
-    html: '<span style="font-size: 1.5em; color: DarkRed;"><i class="fa-solid fa-school-flag"></i></span>',
+    html: '<span style="font-size: 1em; color: DarkRed;"><i class="fa-solid fa-circle-dot"></i></i></span>',
     className:'healthIcon',
 })
 map.createPane('pane_Kiambaa_secondaryschools_2');
@@ -241,24 +195,10 @@ function pop_Kiambaa_primaryschools_3(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-// function style_Kiambaa_primaryschools_3_0() {
-//     return {
-//         pane: 'pane_Kiambaa_primaryschools_3',
-//         radius: 4.0,
-//         opacity: 1,
-//         color: 'rgba(35,35,35,1.0)',
-//         dashArray: '',
-//         lineCap: 'butt',
-//         lineJoin: 'miter',
-//         weight: 1,
-//         fill: true,
-//         fillOpacity: 1,
-//         fillColor: 'rgba(129,15,19,1.0)',
-//         interactive: true,
-//     }
-// }
+
+
 const fontAwesomePriSchIcon = L.divIcon({
-    html: '<span style="font-size: 1.5em; color: MediumPurple;"><i class="fa-solid fa-school-flag"></i></span>',
+    html: '<span style="font-size: 1em; color: MediumPurple;"><i class="fa-solid fa-circle-dot"></i></span>',
     className:'healthIcon',
 })
 map.createPane('pane_Kiambaa_primaryschools_3');
@@ -305,22 +245,8 @@ function pop_Kiambaa_marketcenters_4(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-// function style_Kiambaa_marketcenters_4_0() {
-//     return {
-//         pane: 'pane_Kiambaa_marketcenters_4',
-//         radius: 4.0,
-//         opacity: 1,
-//         color: 'rgba(35,35,35,1.0)',
-//         dashArray: '',
-//         lineCap: 'butt',
-//         lineJoin: 'miter',
-//         weight: 1,
-//         fill: true,
-//         fillOpacity: 1,
-//         fillColor: 'rgba(21,108,252,1.0)',
-//         interactive: true,
-//     }
-// }
+
+
 const fontAwesomeMartetIcon = L.divIcon({
     html: '<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span>',
     className:'healthIcon',
@@ -350,7 +276,7 @@ var baseMaps = {};
 
 // Adding legend marker images to the layer switcher
 //'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,}
-L.control.layers(baseMaps,{'<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span> Market Centers': layer_Kiambaa_marketcenters_4,'<span style="font-size: 1.5em; color: MediumPurple;"><i class="fa-solid fa-school-flag"></i></span> Primary Schools': layer_Kiambaa_primaryschools_3,'<span style="font-size: 1.5em; color: DarkRed;"><i class="fa-solid fa-school-flag"></i></span> Secondary Schools': layer_Kiambaa_secondaryschools_2,'<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span> Health Facilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
+L.control.layers(baseMaps,{'<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span> Market Centers': layer_Kiambaa_marketcenters_4,'<span style="font-size: 1.3em; color: MediumPurple;"><i class="fa-solid fa-circle-dot"></i></span> Primary Schools': layer_Kiambaa_primaryschools_3,'<span style="font-size: 1.3em; color: DarkRed;"><i class="fa-solid fa-circle-dot"></i></span> Secondary Schools': layer_Kiambaa_secondaryschools_2,'<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span> Health Facilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
 setBounds();
 
 // Initialize the Reachability plugin
