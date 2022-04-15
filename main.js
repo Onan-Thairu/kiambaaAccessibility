@@ -121,7 +121,9 @@ var layer_Kiambaa_healthfacilities_1 = new L.geoJson(json_Kiambaa_healthfaciliti
     },
 });
 bounds_group.addLayer(layer_Kiambaa_healthfacilities_1);
-map.addLayer(layer_Kiambaa_healthfacilities_1);
+//map.addLayer(layer_Kiambaa_healthfacilities_1);
+
+
 function pop_Kiambaa_secondaryschools_2(feature, layer) {
     layer.on({
         mouseout: function(e) {
@@ -145,7 +147,6 @@ function pop_Kiambaa_secondaryschools_2(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-
 
 const fontAwesomeSecSchIcon = L.divIcon({
     html: '<span style="font-size: 1em; color: DarkRed;"><i class="fa-solid fa-circle-dot"></i></i></span>',
@@ -171,7 +172,9 @@ var layer_Kiambaa_secondaryschools_2 = new L.geoJson(json_Kiambaa_secondaryschoo
     },
 });
 bounds_group.addLayer(layer_Kiambaa_secondaryschools_2);
-map.addLayer(layer_Kiambaa_secondaryschools_2);
+//map.addLayer(layer_Kiambaa_secondaryschools_2);
+
+
 function pop_Kiambaa_primaryschools_3(feature, layer) {
     layer.on({
         mouseout: function(e) {
@@ -195,7 +198,6 @@ function pop_Kiambaa_primaryschools_3(feature, layer) {
         </table>';
     layer.bindPopup(popupContent, {maxHeight: 400});
 }
-
 
 const fontAwesomePriSchIcon = L.divIcon({
     html: '<span style="font-size: 1em; color: MediumPurple;"><i class="fa-solid fa-circle-dot"></i></span>',
@@ -221,7 +223,9 @@ var layer_Kiambaa_primaryschools_3 = new L.geoJson(json_Kiambaa_primaryschools_3
     },
 });
 bounds_group.addLayer(layer_Kiambaa_primaryschools_3);
-map.addLayer(layer_Kiambaa_primaryschools_3);
+//map.addLayer(layer_Kiambaa_primaryschools_3);
+
+
 function pop_Kiambaa_marketcenters_4(feature, layer) {
     layer.on({
         mouseout: function(e) {
@@ -271,13 +275,25 @@ var layer_Kiambaa_marketcenters_4 = new L.geoJson(json_Kiambaa_marketcenters_4, 
     },
 });
 bounds_group.addLayer(layer_Kiambaa_marketcenters_4);
-map.addLayer(layer_Kiambaa_marketcenters_4);
+//map.addLayer(layer_Kiambaa_marketcenters_4);
+
+var allLayers = [layer_Kiambaa_healthfacilities_1, layer_Kiambaa_marketcenters_4, layer_Kiambaa_primaryschools_3, layer_Kiambaa_secondaryschools_2]
+L.layerGroup(allLayers).addTo(map)
 var baseMaps = {};
+var overlays = {
+    '<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span> Market Centers': layer_Kiambaa_marketcenters_4,
+    '<span style="font-size: 1.3em; color: MediumPurple;"><i class="fa-solid fa-circle-dot"></i></span> Primary Schools': layer_Kiambaa_primaryschools_3,
+    '<span style="font-size: 1.3em; color: DarkRed;"><i class="fa-solid fa-circle-dot"></i></span> Secondary Schools': layer_Kiambaa_secondaryschools_2,
+    '<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span> Health Facilities': layer_Kiambaa_healthfacilities_1,
+    }
 
 // Adding legend marker images to the layer switcher
 //'<img src="legend/Kiambaa_healthfacilities_1.png" /> Kiambaa_healthfacilities': layer_Kiambaa_healthfacilities_1,}
-L.control.layers(baseMaps,{'<span style="font-size: 1.3em; "><i class="fa-solid fa-cart-shopping"></i></span> Market Centers': layer_Kiambaa_marketcenters_4,'<span style="font-size: 1.3em; color: MediumPurple;"><i class="fa-solid fa-circle-dot"></i></span> Primary Schools': layer_Kiambaa_primaryschools_3,'<span style="font-size: 1.3em; color: DarkRed;"><i class="fa-solid fa-circle-dot"></i></span> Secondary Schools': layer_Kiambaa_secondaryschools_2,'<span style="font-size: 1.3em; color: Red;"><i class="fa-solid fa-square-h"></i></span> Health Facilities': layer_Kiambaa_healthfacilities_1,},{collapsed:false}).addTo(map);
+L.control.layers(baseMaps,overlays, {collapsed:false}).addTo(map);
 setBounds();
+
+let secSchools = document.getElementById('secSchools')
+
 
 // Initialize the Reachability plugin
 var reachabilityControl = L.control.reachability({
